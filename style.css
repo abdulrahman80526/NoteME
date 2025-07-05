@@ -1,0 +1,336 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #eef2f7; /* Light blue background */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    color: #333;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.container {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.app-title h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    color: #4a90e2; /* Blue color for title */
+}
+
+.app-title p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+#dark-mode-toggle {
+    background-color: #f0f4f8; /* Light grey background */
+    color: #333;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#dark-mode-toggle:hover {
+    background-color: #e0e4e8;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #f0f4f8;
+    border-radius: 20px;
+    padding: 8px 15px;
+    margin-bottom: 25px;
+}
+
+.search-bar svg {
+    color: #666;
+    margin-right: 10px;
+}
+
+#search-input {
+    border: none;
+    background: none;
+    outline: none;
+    width: 100%;
+    font-size: 1rem;
+    color: #333;
+}
+
+#search-input::placeholder {
+    color: #999;
+}
+
+.add-note-section {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.add-note-section h2 {
+    margin-top: 0;
+    font-size: 1.2rem;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.add-note-section h2 svg {
+    color: #4a90e2;
+}
+
+#note-title {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    outline: none;
+}
+
+#note-text {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    min-height: 100px; /* Adjusted height */
+    resize: vertical;
+    outline: none;
+}
+
+#add-note {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    background: linear-gradient(to right, #4a90e2, #9013fe); /* Gradient background */
+    color: white;
+    transition: opacity 0.3s ease;
+}
+
+#add-note:hover {
+    opacity: 0.9;
+}
+
+.notes-list-section h2 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+#notes-list {
+    margin-top: 0;
+}
+
+.note-item {
+    background-color: #fff;
+    border: 1px solid #eee;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+}
+
+.note-item:hover {
+    background-color: #f0f4f8;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.note-item h3 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+    color: #4a90e2;
+}
+
+.note-item p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.note-item.selected {
+    border-color: #4a90e2;
+    box-shadow: 0 2px 8px rgba(74, 144, 226, 0.3);
+}
+
+.no-notes {
+    text-align: center;
+    padding: 30px;
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    color: #999;
+}
+
+.no-notes svg {
+    color: #ccc;
+    margin-bottom: 10px;
+}
+
+.no-notes p {
+    margin: 5px 0;
+}
+
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: #2c3e50; /* Dark background */
+    color: #ecf0f1; /* Light text */
+}
+
+body.dark-mode .container {
+    background-color: #34495e; /* Darker container */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .app-title h1 {
+    color: #3498db; /* Lighter blue */
+}
+
+body.dark-mode .app-title p {
+    color: #bdc3c7;
+}
+
+body.dark-mode #dark-mode-toggle {
+    background-color: #3b5b7a;
+    color: #ecf0f1;
+}
+
+body.dark-mode #dark-mode-toggle:hover {
+    background-color: #466a8a;
+}
+
+body.dark-mode .search-bar {
+    background-color: #3b5b7a;
+}
+
+body.dark-mode .search-bar svg {
+    color: #bdc3c7;
+}
+
+body.dark-mode #search-input {
+    color: #ecf0f1;
+}
+
+body.dark-mode #search-input::placeholder {
+    color: #bdc3c7;
+}
+
+body.dark-mode .add-note-section {
+    background-color: #3b5b7a;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode .add-note-section h2 {
+    color: #ecf0f1;
+}
+
+body.dark-mode .add-note-section h2 svg {
+    color: #3498db;
+}
+
+body.dark-mode #note-title,
+body.dark-mode #note-text {
+    border-color: #4a6a8a;
+    background-color: #4a6a8a;
+    color: #ecf0f1;
+}
+
+body.dark-mode #note-title::placeholder,
+body.dark-mode #note-text::placeholder {
+    color: #bdc3c7;
+}
+
+body.dark-mode .notes-list-section h2 {
+    color: #ecf0f1;
+}
+
+body.dark-mode .note-item {
+    background-color: #3b5b7a;
+    border-color: #4a6a8a;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode .note-item:hover {
+    background-color: #4a6a8a;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .note-item h3 {
+    color: #3498db;
+}
+
+body.dark-mode .note-item p {
+    color: #bdc3c7;
+}
+
+body.dark-mode .note-item.selected {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.5);
+}
+
+body.dark-mode .no-notes {
+    border-color: #555;
+    color: #777;
+}
+
+body.dark-mode .no-notes svg {
+    color: #555;
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .container {
+        padding: 15px;
+    }
+
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    #dark-mode-toggle {
+        width: 100%;
+        justify-content: center;
+    }
+}
